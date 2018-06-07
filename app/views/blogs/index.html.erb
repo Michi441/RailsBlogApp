@@ -1,0 +1,24 @@
+
+<div class="container">
+  <div class="row">
+    <% @Blogs.each do |b| %>
+    <div class="col-md-3">
+      <div class="thumbnail" id="thumb">
+        <div class="caption">
+        <h3><%= link_to b.title, blog_path(b) %> </h3>
+        <p><%= b.content %></p>
+
+
+
+        <%= link_to "Edit", edit_blog_path(b), class: 'btn btn-primary' %>
+        <%= link_to "Delete", blog_path(b),class: 'btn btn-default', method: :delete, data: { confirm: 'Are you sure?'} %>
+          <%= link_to "View", blog_path(b), class: 'btn btn-default' %>
+
+        </div>
+
+      </div>
+
+    </div>
+    <% end %>
+  </div>
+</div>
